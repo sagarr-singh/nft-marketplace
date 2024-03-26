@@ -87,7 +87,7 @@ const NavBar = () => {
         <div className={Style.navbar_container_left}>
           <div className={Style.logo}>
             <div className={Style.navbar_container_left_logo}>
-            <DiJqueryLogo  onClick={() => router.push("/")} />
+            <DiJqueryLogo  onClick={() => router.push("/")} style={{ width: 65, height: 65 }} />
             </div>
           </div>
           <div className={Style.navbar_container_left_box_input}>

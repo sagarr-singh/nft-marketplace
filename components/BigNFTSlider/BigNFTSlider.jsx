@@ -3,6 +3,8 @@ import Image from "next/image";
 import { AiFillFire, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { MdVerified, MdTimer } from "react-icons/md";
 import { TbArrowBigLeftLines, TbArrowBigRightLine } from "react-icons/tb";
+import { useRouter } from "next/router";
+
 
 //INTERNAL IMPORT
 import Style from "./BigNFTSlider.module.css";
@@ -12,11 +14,13 @@ import Button from "../Button/Button";
 const BigNFTSlider = () => {
   const [idNumber, setIdNumber] = useState(0);
 
+  const router = useRouter();
+
   const sliderData = [
     {
       title: "Hello NFT",
       id: 1,
-      name: "Sahil Singh",
+      name: "Sagar Singh",
       collection: "GymRat",
       price: "00664 ETH",
       like: 243,
@@ -32,7 +36,7 @@ const BigNFTSlider = () => {
     {
       title: "Buddy NFT",
       id: 2,
-      name: "Sam Singh",
+      name: "Simran Singh",
       collection: "Home",
       price: "0055004 ETH",
       like: 242,
@@ -64,7 +68,7 @@ const BigNFTSlider = () => {
     {
       title: "Office NFT",
       id: 4,
-      name: "Sagar Singh",
+      name: "Hazel Singh",
       collection: "Gym",
       price: "466476 ETH",
       like: 243,
@@ -178,8 +182,8 @@ const BigNFTSlider = () => {
             </div>
 
             <div className={Style.bigNFTSlider_box_left_button}>
-              <Button btnName="Place" handleClick={() => {}} />
-              <Button btnName="View" handleClick={() => {}} />
+              <Button btnName="Place" handleClick={() => router.push("/uploadNFT")} />
+              <Button btnName="View" handleClick={() => router.push("NFT-details")} />
             </div>
           </div>
 

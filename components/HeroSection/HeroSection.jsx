@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useContext } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+
 
 // INTERNAL IMPORT
 import Style from "./HeroSection.module.css"
@@ -10,6 +12,9 @@ import images from "../../img"
 import { NFTMarketplaceContext } from '../../Context/NFTMarketplaceContext'
 
 const HeroSection = () => {
+
+  const router = useRouter();
+  
   const {titleData} = useContext(NFTMarketplaceContext);
   return (
     <div className={Style.heroSection}>
@@ -20,7 +25,9 @@ const HeroSection = () => {
             Discover the most outstanding NFTs in all topics of life.
             Create your own NFTs and sell them 
         </p>
-        <Button btnName="Start your search" />      
+        <Button btnName="Start your search"
+          handleClick={() => router.push("/searchPage")}
+        />      
     </div>
     <div className={Style.heroSection_box_right}>
         <Image
